@@ -1,1 +1,0 @@
-alert('Leia com atenção')
