@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio4</title>
+    <title>Document</title>
 </head>
-<script src="ex4.js"></script>
 <body>
-<section>
-    <div>
-     <h1>Exercicio4</h1>
-     <h4>Crie uma página web que permita ao usuário informar a quantidade de pessoas (número inteiro inteiro) e o período (Noturno ou Diurno) e, quando o usuário indicar que deseja que o cálculo seja realizado (pressionar um botão), mostre o total da compra de acordo com as condições abaixo:</h4>
-        <li> vôo diurno, 200 por pessoa. Se mais do que 50 pessoas, desconto de 40% por pessoa.</li>
-        <li>Se vôo noturno, 100 por pessoa. Se mais do que 50 pessoas, desconto de 20% por pessoa.</li>
-        <br>
-        <p>Quantidade de pessoas:<input type="number" name="number" id="txtnum"></p>
-        <p>Voo:
-            <select id="select">
-                <option value="diurno">Diurno</option>
-                <option value="noturno">Noturno</option>
-            </select>
-        </p>
-        <p><input type="button" value="Confirmar informação" onclick="confirmar()"></p>
-        <div id="res"></div>
-    </div>
-</section>
+    Quantidade de pessoas: 
+    <input type="number" id="quantidade">
+    <br>
+    <input type="button" onclick="diurno()" value="diurno">
+    <input type="button" onclick="noturno()" value="noturno">
+    <div id="resultado">Quantidade de voos</div>
+
+    <script>
+        function diurno(){
+            var pessoas = document.getElementById("quantidade").value
+            var preco = pessoas * 200
+            var desconto = 0
+            if(pessoas > 50){
+                desconto = preco * 0.60
+                //document.getElementById("resultado").value = 'Preço final será de R$'${desconto}''
+                resultado.innerHTML += `<p>${desconto}</p>`
+                console.log(desconto);
+            }
+            else{
+                resultado.innerHTML += `<p>${preco}</p>`
+                //document.getElementById("resultado").value = preco
+                console.log(preco);
+            }
+        }
+
+        function noturno(){
+            var pessoas = document.getElementById("quantidade").value
+            var preco = pessoas * 100
+            var desconto = 0
+            if(pessoas > 50){
+                desconto = preco * 0.80
+                resultado.innerHTML += `<p>${desconto}</p>`
+                console.log(desconto);
+            }
+            else{
+                resultado.innerHTML += `<p>${preco}</p>`
+                console.log(preco);
+            }
+        }
+    </script>
 </body>
 </html>
