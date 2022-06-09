@@ -1,32 +1,31 @@
-function confirmar(){
-    var quant = document.getElementById("txtnum").value
-    var select = document.getElementById("select").value
-    var res = document.getElementById("res")
+function diurno(){
+            var pessoas = document.getElementById("quantidade").value
+            var preco = pessoas * 200
+            var desconto = 0
+            if(pessoas > 50){
+                desconto = preco * 0.60
+                //document.getElementById("resultado").value = 'Preço final será de R$'${desconto}''
+                resultado.innerHTML += `<p>${desconto}</p>`
+                console.log(desconto);
+            }
+            else{
+                resultado.innerHTML += `<p>${preco}</p>`
+                //document.getElementById("resultado").value = preco
+                console.log(preco);
+            }
+        }
 
-    console.log(quant)
-   
-    if (select == "diurno")
-        {
-            var result = quant * 200
-            res.innerHTML += `<p>${result}</p>`
+        function noturno(){
+            var pessoas = document.getElementById("quantidade").value
+            var preco = pessoas * 100
+            var desconto = 0
+            if(pessoas > 50){
+                desconto = preco * 0.80
+                resultado.innerHTML += `<p>${desconto}</p>`
+                console.log(desconto);
+            }
+            else{
+                resultado.innerHTML += `<p>${preco}</p>`
+                console.log(preco);
+            }
         }
-        else if (select == "diurno" && quant>=50)
-        {
-        var result = (quant * 0.4)
-        res.innerHTML += `<p>${result}</p>`
-        }
-    else if (select == "noturno")
-        {
-        var result = (quant * 100)
-        res.innerHTML += `<p>${result}</p>`
-        }
-    else if (select == "noturno" && quant>=50)
-        {
-        var result = (quant * 0.2)
-        res.innerHTML += `<p>${result}</p>`
-        }
-    else
-        {
-            res.innerHTML = "ERRO!"
-        }
-}
