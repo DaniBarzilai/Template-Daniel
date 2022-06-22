@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 1 Semana 9</title>
+</head>
+<body style="background-color: floralwhite;">
+
+
+<h3>
+    Crie uma página web na qual o usuário informe um número inteiro de três dígitos e quando o usuário indicar que deseja que o cálculo seja realizado (pressionar um botão), seja exibido se o dígito da centena é par ou ímpar.</h3>
+
+    <section>
+        <div>
+            <p>Número: <input type="number" name="numero" id="texto" maxlength="3"></p>
+            <p><input type="button" value="Verificar" onclick="calcular()"></p>
+        </div>
+        <div>
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        function calcular()
+{
+    var número = Number.parseInt(document.getElementById("texto").value)
+    var res = document.getElementById("resultado")
+    if (número % 2 == 0)
+    {
+        res.innerHTML = "Par!"
+    }
+    else
+    {
+        res.innerHTML = "Impar!"
+    }
+}
+    </script>
+</body>
+</html>

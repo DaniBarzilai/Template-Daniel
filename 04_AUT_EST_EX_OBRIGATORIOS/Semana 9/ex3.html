@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3 Semana 9
+    </title>
+   
+</head>
+<body style="background-color: floralwhite;">
+    
+<h1>Crie uma página web na qual o usuário informe três nomes e quando o usuário indicar que deseja que o cálculo seja realizado (pressionar um botão), os nomes são exibidos em ordem alfabética crescente.</h1>
+    
+    
+        <div>
+            <p>Primeiro Nome: <input type="text" name="numero" id="nome1"></p>
+            <p>Segundo Nome: <input type="text" name="numero" id="nome2"></p>
+            <p>Terceiro Nome: <input type="text" name="numero" id="nome3"></p>
+            <p><input type="button" value="Verificar" onclick="Verificar()"></p>
+        </div>
+        <div>
+            <p id="resultado">Soma dos números:</p>
+        </div>
+
+    <script>
+        function Verificar()
+{
+    var n1 = document.getElementById("nome1").value
+    var n2 = document.getElementById("nome2").value
+    var n3 = document.getElementById("nome3").value
+    var nomes = [n1 , n2 , n3]
+    nomes.sort()
+    document.getElementById("res").innerHTML = `${nomes}`
+}
+    </script>
+</body>
+</html>
+

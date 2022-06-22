@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="exercicio4_smn9.js"></script>
+</head>
+<body style="background-color: floralwhite;">
+    Ate onde vc quer fazer a sequencia de Fibonacci <input type="number" name="b1" id="b1"> <input type="button" value="Verificar" onclick="Verificar()">
+    <div id="resultado">
+    
+    </div>
+    <script>
+        function Verificar(){
+
+    var resultado = document.getElementById("resultado")
+    var lim = Number(document.getElementById("b1").value)
+    var Seq = [1,1]
+​
+    if(lim > 0){
+        if(lim === 1){
+            resultado.innerHTML += "1"
+        } else {
+            for(var i = 1; i<lim; i++){
+                Seq.push(Seq[i]+Seq[i-1])
+            }
+            for(var k = 0; k<Seq.length; k++){
+                if(k === Seq.length-1){
+                    resultado.innerHTML += `${Seq[k]}`
+                } else {
+                    resultado.innerHTML += `${Seq[k]}, `
+                }
+            }
+        }
+​
+    } else {
+        alert("[ERRO]")
+    }
+}
+    </script>
+</body>
+</html>
